@@ -33,9 +33,8 @@ public class anagram_check
         }
 
         Arrays.sort(arr1);
-        System.out.println(Arrays.toString(arr1));
         Arrays.sort(arr2);
-        System.out.println(Arrays.toString(arr2));
+
         String str3,str4;
         str3=" ";
         str4=" ";
