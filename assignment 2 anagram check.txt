@@ -1,0 +1,61 @@
+import java.util.*;
+import java.io.*;
+public class anagram_check
+{
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        DataInputStream in=new DataInputStream(System.in);
+        String str1, str2;
+        System.out.println("Enter the 1st String");
+        str1 = sc.nextLine();
+        System.out.println("Enter the second string");
+        str2 = sc.nextLine();
+        String a = str1.toLowerCase().trim();
+        String b = str2.toLowerCase().trim();
+        int arr1[] = new int[a.length()];
+        int arr2[]=new int[b.length()];
+
+        for(int i=0;i<a.length();i++)
+        {
+            if((int)a.charAt(i)!=32 && a.charAt(i)!=' '&& (int)a.charAt(i)!=0)
+            {
+                arr1[i]=(int)a.charAt(i);
+            }
+        }
+
+
+        for(int i=0;i<b.length();i++)
+        {
+            if((int)b.charAt(i)!=32 && b.charAt(i)!=' '&& (int)b.charAt(i)!=0)
+            {
+                arr2[i]=(int)b.charAt(i);
+            }
+        }
+
+        Arrays.sort(arr1);
+        System.out.println(Arrays.toString(arr1));
+        Arrays.sort(arr2);
+        System.out.println(Arrays.toString(arr2));
+        String str3,str4;
+        str3=" ";
+        str4=" ";
+        for(int i=0;i<a.length();i++)
+        {
+           str3 = str3 +(char)arr1[i];
+        }
+        str3.trim();
+        for(int i=0;i<b.length();i++)
+        {
+            str4=str4+(char)arr2[i];
+        }
+        str4.trim();
+
+        if(str3.compareTo(str4)==0)
+        {
+            System.out.println("\t"+str1+"\n"+"\t"+"and"+"\n"+"\t"+str2+"\n"+"are anagram");
+        }
+        else{
+            System.out.println("\t"+str1+"\n"+"\t"+"and"+"\n"+"\t"+str2+"\n"+"are not an anagram");
+        }
+    }
+}
